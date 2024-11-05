@@ -14,54 +14,79 @@ S pozdravom<br><br>
 Kancelária rektora UKF v Nitre</p>
         </div>
        
-<button @click="show = !show">
-    <div class="notification-card">
-        <div class="notification-title">Notifikácie</div>
-        <div class="notification-icon">
-        <div class="notification-badge">0</div>
-        <div :class="['dropdown-icon', { 'rotate': show }]">
-            <img :src="dropdown_icon" alt="Icon" />
+    <div class="notification-card" @click=toggleAwesome()>
+        <div class="notifications-header">
+            <h2>Notifikácie</h2>
+        <div class="total-badge">{{ totalNotifications }}</div>
+    </div>
+
+    <!-- Notification categories -->
+    <div v-if="awesome" class="toggle-notification-category">
+      <div
+        v-for="(category, index) in categories"
+        :key="index"
+        class="notification-category"
+      >
+        <div class="notification-title">
+          <span>{{ category.title }}</span>
+          <div class="category-controls">
+            <span class="badge">{{ category.count }}</span>
+            <button @click.stop="clearNotifications(index)" class="clear-btn">
+              🗑️
+            </button>
+            <button @click.stop="toggleCategory(index)">
+              {{ category.isOpen ? '▲' : '▼' }}
+            </button>
           </div>
+        </div>
+
+        <!-- Show/hide details -->
+        <div v-if="category.isOpen" class="notification-details">
+          <p>Details about {{ category.title }} notifications...</p>
+        </div>
+      </div>
+
+      <!-- Maintenance link -->
+      <a href="#" class="maintenance-link">Údržba notifikácií</a>
     </div>
-</div>
-</button>
-<div class="subject-evaluation" v-if="show">
-        <div class="notification-title">O hodnoteniach predmetov</div>
-        <div class="notification-icon">
-        <div class="notification-badge">0</div>
-        <div class="dropdown-icon"><img :src="dropdown_icon" alt="Icon" /></div>
-    </div>
-</div>
-<div class="dates-evaluation" v-if="show">
-        <div class="notification-title">O termínoch hodnotenia</div>
-        <div class="notification-icon">
-        <div class="notification-badge">0</div>
-        <div class="dropdown-icon"><img :src="dropdown_icon" alt="Icon" /></div>
-    </div>
-</div>
-<div class="about-documents" v-if="show">
-        <div class="notification-title">O termínoch hodnotenia</div>
-        <div class="notification-icon">
-        <div class="notification-badge">0</div>
-        <div class="dropdown-icon"><img :src="dropdown_icon" alt="Icon" /></div>
-    </div>
-</div>
+  </div>
 
 
 </body>
 </template>
 
 <script>
-import dropdown_icon from '@/assets/dropdown_icon.png'
 export default {
-    name: 'Notification',
-    data() {
-      return {
-        dropdown_icon,
-        show: false,
-      };
+  data() {
+    return {
+      awesome: false,
+      categories: [
+        { title: 'O hodnoteniach predmetov', count: 18, isOpen: false },
+        { title: 'O termínoch hodnotenia', count: 107, isOpen: false },
+        { title: 'O dokumentoch', count: 69, isOpen: false },
+      ],
+    }
+  },
+  computed: {
+    totalNotifications() {
+      // Sum of all category counts
+      return this.categories.reduce((sum, category) => sum + category.count, 0)
     },
-  };
+  },
+  methods: {
+    toggleCategory(index) {
+      // Toggle the open state of the category
+      this.categories[index].isOpen = !this.categories[index].isOpen
+    },
+    clearNotifications(index) {
+      // Clear notifications for a specific category
+      this.categories[index].count = 0
+    },
+    toggleAwesome() {
+      this.awesome = !this.awesome;
+    },
+  },
+}
 </script>
 
 <style scoped>
@@ -88,74 +113,8 @@ export default {
             color: #555;
             font-weight: bold;
         }
-/* Ikonka animacia */
-        .notification-icon {
-            display: flex;
-            align-items: center;
-            
-        }
-        .dropdown-icon {
-         transition: 0.3s ease; 
-        }
-
-        .rotate {
-         transform: rotate(180deg); 
-        }
-
-        .notification-badge {
-            background-color: #f44336; /* Red color */
-            color: white;
-            font-size: 12px;
-            border-radius: 50%;
-            padding: 5px 10px;
-            margin-right: 15px;
-        }
-
-        .dropdown-icon img {
-            width: 25px;
-            padding: 3px;
-            }
-            button{
-                border-color: white;
-                border: 0px;
-            }
-
-        .subject-evaluation{
-            width: 450px;
-            border-radius: 20px;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: white;
-            cursor: pointer;
-            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
-            margin-top: 10px;
-        }
-        .dates-evaluation{
-            width: 450px;
-            border-radius: 20px;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: white;
-            cursor: pointer;
-            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
-            margin-top: 10px;
-        }
-        .about-documents{
-            width: 450px;
-            border-radius: 20px;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: white;
-            cursor: pointer;
-            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
-            margin-top: 10px;
-        }
+       
+        
             .announcement{
                 background-color: orange;
                 padding: 5px;
