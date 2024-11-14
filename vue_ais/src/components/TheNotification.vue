@@ -93,7 +93,7 @@ export default {
 
 
         .notification-card {
-            width: 50vh;
+            width: auto;
  
             border-radius: 20px;
             padding: 10px;

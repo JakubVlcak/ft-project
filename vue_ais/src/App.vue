@@ -26,12 +26,10 @@ import TheSchedule from './components/TheSchedule.vue';
 /* Main layout for content and sidebar */
 .main-content {
   display: flex;
+  padding: 0 20px;
 }
 
-/* Fixed width for sidebar */
-.sidebar {
-  flex: 0 0 200px;
-}
+
 
 /* Stack Notification and Schedule vertically in content */
 .content {
@@ -54,5 +52,6 @@ import TheSchedule from './components/TheSchedule.vue';
 body {
   margin: 0;
   padding: 0;
+  height: auto;
 }
 </style>
