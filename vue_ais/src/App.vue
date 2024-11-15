@@ -1,8 +1,8 @@
 <script setup>
-import TheHeader from './components/TheHeader.vue';
-import TheNotification from './components/TheNotification.vue';
-import TheSiderBar from './components/TheSideBar.vue';
-import TheSchedule from './components/TheSchedule.vue';
+import TheHeader from './components/TheHeader.vue'
+import TheNotification from './components/TheNotification.vue'
+import TheSiderBar from './components/TheSideBar.vue'
+import TheSchedule from './components/TheSchedule.vue'
 </script>
 
 <template>
@@ -28,8 +28,6 @@ import TheSchedule from './components/TheSchedule.vue';
   display: flex;
   padding: 0 20px;
 }
-
-
 
 /* Stack Notification and Schedule vertically in content */
 .content {
