@@ -1,9 +1,5 @@
 <script setup>
-import TheHeader from '../components/TheHeader.vue'
-
-defineOptions({
-  name: 'ScheduleView',
-})
+import TheHeader from '@/components/TheHeader.vue'
 </script>
 
 <template>

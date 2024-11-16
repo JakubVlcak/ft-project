@@ -1,7 +1,10 @@
 <template>
   <!-- Use the imported ais_logo variable for the image source -->
+
   <header>
-    <div class="aisLogo"><img :src="aisLogo" alt="Logo" /></div>
+    <RouterLink to="/"
+      ><div class="aisLogo"><img :src="aisLogo" alt="Logo" /></div
+    ></RouterLink>
     <h1>Študent</h1>
 
     <div class="Student">

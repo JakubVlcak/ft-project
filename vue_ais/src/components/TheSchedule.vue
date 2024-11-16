@@ -1,8 +1,9 @@
 <template>
-  <div class="schedule-card">
-    <h2>Môj rozvrh, vyhľadávanie rozvrhu</h2>
-    <img :src="IconSchedule" alt="" />
-  </div>
+  <RouterLink to="/schedule"
+    ><div class="schedule-card">
+      <h2>Môj rozvrh, vyhľadávanie rozvrhu</h2>
+      <img :src="IconSchedule" alt="" /></div
+  ></RouterLink>
 </template>
 
 <script>

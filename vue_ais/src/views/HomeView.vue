@@ -1,9 +1,25 @@
-<script setup></script>
+<script setup>
+import TheHeader from '../components/TheHeader.vue'
+import TheNotification from '../components/TheNotification.vue'
+import TheSiderBar from '../components/TheSideBar.vue'
+import TheSchedule from '../components/TheSchedule.vue'
+</script>
 
 <template>
-  <nav>
-    <router-view></router-view>
-  </nav>
+  <div>
+    <TheHeader />
+    <div class="main-content">
+      <TheSiderBar class="sidebar" />
+      <div class="content">
+        <div class="notification-wrapper">
+          <TheNotification />
+        </div>
+        <div class="schedule-wrapper">
+          <TheSchedule />
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <style scoped>
