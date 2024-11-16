@@ -22,7 +22,6 @@ export default {
 .schedule-card {
   width: auto;
   border-radius: 20px;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -41,5 +40,8 @@ export default {
 h2 {
   color: #0069c8;
   margin: 0px;
+}
+a {
+  text-decoration: none;
 }
 </style>

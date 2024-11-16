@@ -3,6 +3,7 @@ import TheHeader from '../components/TheHeader.vue'
 import TheNotification from '../components/TheNotification.vue'
 import TheSiderBar from '../components/TheSideBar.vue'
 import TheSchedule from '../components/TheSchedule.vue'
+import TheRecordSheet from '@/components/TheRecordSheet.vue'
 </script>
 
 <template>
@@ -16,6 +17,7 @@ import TheSchedule from '../components/TheSchedule.vue'
         </div>
         <div class="schedule-wrapper">
           <TheSchedule />
+          <TheRecordSheet />
         </div>
       </div>
     </div>
@@ -41,6 +43,11 @@ import TheSchedule from '../components/TheSchedule.vue'
 .notification-wrapper,
 .schedule-wrapper {
   margin: 0; /* Remove any default margin */
+  display: flex;
+  flex-direction: column;
+}
+.schedule-wrapper > *:not(:last-child) {
+  margin-bottom: 20px; /* Adjust the gap as needed */
 }
 
 .notification-wrapper {
