@@ -69,6 +69,7 @@ header {
 }
 .profileIcon img {
   width: 30px; /* Set the desired width */ /* Keep aspect ratio */
+  padding-top: 5px;
 }
 .menu-icon {
   display: flex;

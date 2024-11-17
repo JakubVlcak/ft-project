@@ -54,7 +54,7 @@ export default {
 
 .blue-card {
   width: 100%;
-  border-radius: 10px;
+  border-radius: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -72,7 +72,7 @@ p {
 }
 .Zapis {
   width: 70%;
-  border-radius: 20px;
+  border-radius: 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;

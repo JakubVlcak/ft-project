@@ -105,7 +105,7 @@ export default {
 .notification-card {
   width: 70%;
   border-radius: 20px;
-  padding: 10px;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -134,12 +134,10 @@ export default {
   box-shadow: 2px 2px 10px lightgray;
   width: 70%;
   margin: 10px;
-  padding-left: 20px;
-  padding-right: 40px;
 }
 .total-badge {
   position: absolute; /* Position it relative to the card */
-  top: 20px; /* Adjust the top distance */
+  top: 15px; /* Adjust the top distance */
   right: 20px; /* Adjust the right distance */
   background-color: red; /* Badge background color */
   color: white; /* Text color */
