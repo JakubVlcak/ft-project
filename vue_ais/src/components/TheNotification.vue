@@ -103,7 +103,7 @@ export default {
 
 <style scoped>
 .notification-card {
-  width: auto;
+  width: 70%;
   border-radius: 20px;
   padding: 10px;
   display: flex;
@@ -132,7 +132,7 @@ export default {
   padding: 5px;
   border-radius: 15px;
   box-shadow: 2px 2px 10px lightgray;
-  width: auto;
+  width: 70%;
   margin: 10px;
   padding-left: 20px;
   padding-right: 40px;

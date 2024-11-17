@@ -34,7 +34,7 @@ export default {
 
 <style scoped>
 .schedule-card {
-  width: auto;
+  width: 70%;
   border-radius: 20px;
   display: flex;
   justify-content: space-between;
@@ -71,7 +71,7 @@ p {
   padding: 10px;
 }
 .Zapis {
-  width: auto;
+  width: 70%;
   border-radius: 20px;
   display: flex;
   justify-content: space-between;
