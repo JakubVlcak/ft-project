@@ -1,9 +1,19 @@
-<script setup>
+<script>
 import TheHeader from '../components/TheHeader.vue'
 import TheNotification from '../components/TheNotification.vue'
 import TheSiderBar from '../components/TheSideBar.vue'
 import TheSchedule from '../components/TheSchedule.vue'
 import TheRecordSheet from '@/components/TheRecordSheet.vue'
+
+export default {
+  components: {
+    TheHeader,
+    TheNotification,
+    TheSiderBar,
+    TheSchedule,
+    TheRecordSheet,
+  },
+}
 </script>
 
 <template>

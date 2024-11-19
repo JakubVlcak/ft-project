@@ -42,8 +42,7 @@
       </div>
       <hr />
       <div v-for="(subject, index) in filteredPP" :key="index" class="subject">
-        {{ subject.title }}
-        {{ subject.popis }}
+        {{ subject.title }} - {{ subject.popis }}
         <button
           :disabled="addedSubjects.has(subject.title)"
           @click="addCredits(subject.title, subject.credity)"
@@ -56,8 +55,7 @@
       </div>
       <hr />
       <div v-for="(subject, index) in filteredPV" :key="index" class="subject">
-        {{ subject.title }}
-        {{ subject.popis }}
+        {{ subject.title }} - {{ subject.popis }}
         <button
           :disabled="addedSubjects.has(subject.title)"
           @click="addCredits(subject.title, subject.credity)"
@@ -70,6 +68,7 @@
 </template>
 
 <script>
+import { useSubjectStore } from '@/stores/SubjectStore' // Import the store
 import TheHeader from '@/components/TheHeader.vue'
 
 export default {
@@ -77,146 +76,37 @@ export default {
     TheHeader,
   },
   data() {
+    // Use the Pinia store
+    const subjectStore = useSubjectStore()
     return {
-      selectedSemester: 'all',
-      totalCredits: 0, // Initialize total credits
-      addedSubjects: new Set(), // Track subjects that have been added
-      state: {
-        pp: [
-          {
-            title: 'Formálne jazyky a automaty',
-            credity: 6,
-            popis: '6K, ZS',
-            semester: 'ZS',
-          },
-          {
-            title: 'Internet vecí',
-            credity: 6,
-            popis: '6K, LS',
-            semester: 'LS',
-          },
-          {
-            title: 'Koncepty počítačovej bezpečnosti',
-            credity: 6,
-            popis: '6K, ZS',
-            semester: 'ZS',
-          },
-          {
-            title: 'Odborná prax',
-            credity: 5,
-            popis: '5K, ZS',
-            semester: 'ZS',
-          },
-          {
-            title: 'Počítačová analýza dát',
-            credity: 6,
-            popis: '6K, ZS',
-            semester: 'ZS',
-          },
-          {
-            title: 'Seminár k bakalárskej práci I.',
-            credity: 2,
-            popis: '2K, ZS',
-            semester: 'ZS',
-          },
-          {
-            title: 'Seminár k bakalárskej práci II.',
-            credity: 2,
-            popis: '2K, LS',
-            semester: 'LS',
-          },
-          {
-            title: 'Umelá inteligencia',
-            credity: 6,
-            popis: '6K, LS',
-            semester: 'LS',
-          },
-        ],
-        pv: [
-          {
-            title: 'Aplikácie počítačových sietí',
-            credity: 3,
-            popis: '3K, ZS',
-            semester: 'ZS',
-          },
-          {
-            title: 'Aplikácie priemyselných riadiacich systémov',
-            credity: 5,
-            popis: '5K, ZS',
-            semester: 'ZS',
-          },
-          {
-            title: 'Backendové technológie',
-            credity: 5,
-            popis: '5K, LS',
-            semester: 'LS',
-          },
-          {
-            title: 'Frontendové technológie',
-            credity: 5,
-            popis: '5K, ZS',
-            semester: 'ZS',
-          },
-          {
-            title: 'IT projektový manažment',
-            credity: 3,
-            popis: '3K, LS',
-            semester: 'LS',
-          },
-          {
-            title: 'Modelovanie a simulácia',
-            credity: 6,
-            popis: '6K, ZS',
-            semester: 'ZS',
-          },
-          {
-            title: 'Programovanie mikroprocesorových systémov',
-            credity: 5,
-            popis: '5K, LS',
-            semester: 'LS',
-          },
-          {
-            title: 'Testovanie softvéru',
-            credity: 3,
-            popis: '3K, LS',
-            semester: 'LS',
-          },
-          {
-            title: 'Vývoj 3D aplikácií',
-            credity: 3,
-            popis: '3K, ZS',
-            semester: 'ZS',
-          },
-        ],
-      },
+      subjectStore,
     }
   },
   computed: {
+    selectedSemester: {
+      get() {
+        return this.subjectStore.selectedSemester
+      },
+      set(value) {
+        this.subjectStore.selectedSemester = value
+      },
+    },
+    totalCredits() {
+      return this.subjectStore.totalCredits
+    },
+    addedSubjects() {
+      return this.subjectStore.addedSubjects
+    },
     filteredPP() {
-      if (this.selectedSemester === 'all') {
-        return this.state.pp // Show all subjects
-      }
-      return this.state.pp.filter(
-        subject => subject.semester === this.selectedSemester,
-      )
+      return this.subjectStore.filteredPP
     },
     filteredPV() {
-      if (this.selectedSemester === 'all') {
-        return this.state.pv // Show all subjects
-      }
-      return this.state.pv.filter(
-        subject => subject.semester === this.selectedSemester,
-      )
+      return this.subjectStore.filteredPV
     },
   },
   methods: {
     addCredits(subjectTitle, creditsToAdd) {
-      if (!this.addedSubjects.has(subjectTitle)) {
-        // Only add if not already added
-        this.totalCredits += creditsToAdd // Add the credits of the clicked subject to the total
-        this.addedSubjects.add(subjectTitle) // Mark this subject as added
-        console.log(this.addedSubjects)
-      }
+      this.subjectStore.addCredits(subjectTitle, creditsToAdd)
     },
   },
 }
