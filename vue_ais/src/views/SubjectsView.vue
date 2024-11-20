@@ -43,12 +43,20 @@
       <hr />
       <div v-for="(subject, index) in filteredPP" :key="index" class="subject">
         {{ subject.title }} - {{ subject.popis }}
-        <button
-          :disabled="addedSubjects.has(subject.title)"
-          @click="addCredits(subject.title, subject.credity)"
-        >
-          Pridať predmet
-        </button>
+        <div class="button-group">
+          <button
+            :disabled="!addedSubjects.has(subject.title)"
+            @click="removeCredits(subject.title)"
+          >
+            Odobrať predmet
+          </button>
+          <button
+            :disabled="addedSubjects.has(subject.title)"
+            @click="addCredits(subject.title, subject.credity)"
+          >
+            Pridať predmet
+          </button>
+        </div>
       </div>
       <div class="SubjectTitle">
         <h2>Povinne voliteľné predmety</h2>
@@ -56,12 +64,20 @@
       <hr />
       <div v-for="(subject, index) in filteredPV" :key="index" class="subject">
         {{ subject.title }} - {{ subject.popis }}
-        <button
-          :disabled="addedSubjects.has(subject.title)"
-          @click="addCredits(subject.title, subject.credity)"
-        >
-          Pridať predmet
-        </button>
+        <div class="button-group">
+          <button
+            :disabled="!addedSubjects.has(subject.title)"
+            @click="removeCredits(subject.title)"
+          >
+            Odobrať predmet
+          </button>
+          <button
+            :disabled="addedSubjects.has(subject.title)"
+            @click="addCredits(subject.title, subject.credity)"
+          >
+            Pridať predmet
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -104,9 +120,13 @@ export default {
       return this.subjectStore.filteredPV
     },
   },
+
   methods: {
     addCredits(subjectTitle, creditsToAdd) {
       this.subjectStore.addCredits(subjectTitle, creditsToAdd)
+    },
+    removeCredits(subjectTitle, creditsToAdd) {
+      this.subjectStore.removeCredits(subjectTitle, creditsToAdd)
     },
   },
 }
@@ -183,5 +203,9 @@ label {
   padding-right: 20px;
   font-weight: bold;
   justify-content: space-between;
+}
+.button-group {
+  display: flex;
+  gap: 10px; /* Adjust space between buttons */
 }
 </style>
