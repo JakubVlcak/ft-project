@@ -1,17 +1,17 @@
-import { createMemoryHistory, createRouter } from 'vue-router'
+import { createWebHistory, createRouter } from 'vue-router'
 
 import ScheduleView from '../views/ScheduleView.vue'
 import HomeView from '../views/HomeView.vue'
 import SubjectsView from '@/views/SubjectsView.vue'
 
 const routes = [
-  { path: '/', component: HomeView },
-  { path: '/schedule', component: ScheduleView },
-  { path: '/subjects', component: SubjectsView },
+  { path: '/',  name: 'home', component: HomeView },
+  { path: '/schedule', name: 'schedule', component: ScheduleView },
+  { path: '/subjects', name: 'subjects', component: SubjectsView },
 ]
 
 const router = createRouter({
-  history: createMemoryHistory(),
+  history: createWebHistory(),
   routes,
 })
 

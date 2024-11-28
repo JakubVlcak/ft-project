@@ -136,12 +136,12 @@ export const useSubjectStore = defineStore('subjectStore', {
           subject.semester === state.selectedSemester,
       )
     },
-    filteredPP(state) {
+    filteredPP() {
       return this.filteredSubjects.filter(
         subject => subject.subjectValue === 'pp',
       )
     },
-    filteredPV(state) {
+    filteredPV() {
       return this.filteredSubjects.filter(
         subject => subject.subjectValue === 'pv',
       )
