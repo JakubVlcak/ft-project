@@ -13,7 +13,58 @@ export const useSubjectStore = defineStore('subjectStore', {
         popis: '6K, ZS',
         semester: 'ZS',
         subjectValue: 'pp',
-      },
+        times: [
+          {
+            day: "Po",
+            startTime: "07:30",
+            endTime: "12:30",
+            type: "Cvičenie",
+            roomNumber: "THA02260"
+          },
+          {
+            day: "Po",
+            startTime: "13:00",
+            endTime: "14:30",
+            type: "Cvičenie",
+            roomNumber: "THA02260"
+          },
+          {
+            day: "St",
+            startTime: "09:15",
+            endTime: "10:45",
+            type: "Prednáška",
+            roomNumber: "THP00060"
+          },
+          {
+            day: "Št",
+            startTime: "11:00",
+            endTime: "12:30",
+            type: "Cvičenie",
+            roomNumber: "THA02260"
+          },
+          {
+            day: "Ut",
+            startTime: "09:15",
+            endTime: "10:45",
+            type: "Cvičenie",
+            roomNumber: "THA02260"
+          },
+          {
+            day: "Ut",
+            startTime: "11:00",
+            endTime: "12:30",
+            type: "Cvičenie",
+            roomNumber: "THA02260"
+          },
+          {
+            day: "Ut",
+            startTime: "14:45",
+            endTime: "16:45",
+            type: "Cvičenie",
+            roomNumber: "THA02260"
+          }
+        ]
+      }, 
       {
         title: 'Internet vecí',
         credity: 6,

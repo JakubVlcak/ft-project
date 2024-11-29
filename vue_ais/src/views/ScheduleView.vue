@@ -6,13 +6,24 @@ export default {
   components: {
     TheHeader,
   },
+  data() {
+    return {
+      expandedSubject: null, 
+    };
+  },
   computed: {
     addedSubjectDetails() {
-      const subjectStore = useSubjectStore()
-      return subjectStore.addedSubjectDetails
+      const subjectStore = useSubjectStore();
+      return subjectStore.addedSubjectDetails;
+    },
+  },
+  methods: {
+    toggleSubject(subjectTitle) {
+      this.expandedSubject = this.expandedSubject === subjectTitle ? null : subjectTitle;
     },
   },
 }
+
 </script>
 
 <template>
@@ -20,18 +31,24 @@ export default {
   <div class="added-subjects">
     <h2>Rozvrh</h2>
     <div v-if="addedSubjectDetails.length === 0">
-      <p>Nemas pridané žiadne predmety.</p>
+      <p>Nemáš pridané žiadne predmety.</p>
     </div>
     <ul v-else>
-      <li v-for="(subject, index) in addedSubjectDetails" :key="index">
-        <strong>{{ subject.title }}</strong> - {{ subject.popis }} ({{
-          subject.credity
-        }}
-        Kredity)
+      <li v-for="(subject, index) in addedSubjectDetails" :key="index" @click="toggleSubject(subject.title)">
+        <strong>{{ subject.title }}</strong> - {{ subject.popis }} ({{ subject.credity }} Kredity)
+        
+        <div v-if="expandedSubject === subject.title && subject.times">
+          <ul class="time-list">
+            <li v-for="(time, tIndex) in subject.times" :key="tIndex">
+              {{ time.day }}: {{ time.startTime }} - {{ time.endTime }} {{ time.type}} ({{ time.roomNumber }}) <input type="checkbox" @click.stop>
+            </li>
+          </ul>
+        </div>
       </li>
     </ul>
   </div>
 </template>
+
 
 <style scoped>
 .added-subjects {
@@ -53,4 +70,20 @@ li {
   border: 1px solid #ddd;
   border-radius: 5px;
 }
+li:hover {
+  background: #e6f0ff;
+}
+.time-list {
+  margin-top: 10px;
+  list-style: none;
+  padding: 0;
+}
+.time-list li {
+  background: #fff;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin: 3px 0;
+}
+
 </style>
