@@ -71,6 +71,57 @@ export const useSubjectStore = defineStore('subjectStore', {
         popis: '6K, LS',
         semester: 'LS',
         subjectValue: 'pp',
+        times: [
+          {
+            day: "Po",
+            startTime: "07:30",
+            endTime: "12:30",
+            type: "Cvičenie",
+            roomNumber: "THA02260"
+          },
+          {
+            day: "Po",
+            startTime: "13:00",
+            endTime: "14:30",
+            type: "Cvičenie",
+            roomNumber: "THA02260"
+          },
+          {
+            day: "Ut",
+            startTime: "09:15",
+            endTime: "10:45",
+            type: "Prednáška",
+            roomNumber: "THP00060"
+          },
+          {
+            day: "Ut",
+            startTime: "11:00",
+            endTime: "12:30",
+            type: "Cvičenie",
+            roomNumber: "THA02260"
+          },
+          {
+            day: "Št",
+            startTime: "09:15",
+            endTime: "10:45",
+            type: "Cvičenie",
+            roomNumber: "THA02260"
+          },
+          {
+            day: "Št",
+            startTime: "11:00",
+            endTime: "12:30",
+            type: "Cvičenie",
+            roomNumber: "THA02260"
+          },
+          {
+            day: "Št",
+            startTime: "14:45",
+            endTime: "16:45",
+            type: "Cvičenie",
+            roomNumber: "THA02260"
+          }
+        ]
       },
       {
         title: 'Koncepty počítačovej bezpečnosti',
@@ -78,6 +129,43 @@ export const useSubjectStore = defineStore('subjectStore', {
         popis: '6K, ZS',
         semester: 'ZS',
         subjectValue: 'pp',
+        times: [
+          {
+            day: "Ut",
+            startTime: "07:30",
+            endTime: "09:15",
+            type: "Cvičenie",
+            roomNumber: "THB02120"
+          },
+          {
+            day: "Ut",
+            startTime: "09:15",
+            endTime: "10:45",
+            type: "Cvičenie",
+            roomNumber: "THB02120"
+          },
+          {
+            day: "Ut",
+            startTime: "14:45",
+            endTime: "16:15",
+            type: "Cvičenie",
+            roomNumber: "THB02120"
+          },
+          {
+            day: "Št",
+            startTime: "07:30",
+            endTime: "09:00",
+            type: "Cvičenie",
+            roomNumber: "THB02120"
+          },
+          {
+            day: "Št",
+            startTime: "09:15",
+            endTime: "10:45",
+            type: "Cvičenie",
+            roomNumber: "THA02260"
+          },
+        ]
       },
       {
         title: 'Odborná prax',
@@ -92,6 +180,43 @@ export const useSubjectStore = defineStore('subjectStore', {
         popis: '6K, ZS',
         semester: 'ZS',
         subjectValue: 'pp',
+        times: [
+          {
+            day: "Ut",
+            startTime: "09:15",
+            endTime: "10:45",
+            type: "Cvičenie",
+            roomNumber: "THB01130"
+          },
+          {
+            day: "Ut",
+            startTime: "11:00",
+            endTime: "12:30",
+            type: "Cvičenie",
+            roomNumber: "THB01130"
+          },
+          {
+            day: "St",
+            startTime: "13:00",
+            endTime: "14:30",
+            type: "Prednaška",
+            roomNumber: "THC03050"
+          },
+          {
+            day: "St",
+            startTime: "14:45",
+            endTime: "16:15",
+            type: "Cvičenie",
+            roomNumber: "THB01130"
+          },
+          {
+            day: "St",
+            startTime: "16:30",
+            endTime: "18:00",
+            type: "Cvičenie",
+            roomNumber: "THA02260"
+          },
+        ]
       },
       {
         title: 'Seminár k bakalárskej práci I.',
@@ -113,6 +238,43 @@ export const useSubjectStore = defineStore('subjectStore', {
         popis: '6K, LS',
         semester: 'LS',
         subjectValue: 'pp',
+        times: [
+          {
+            day: "Ut",
+            startTime: "09:15",
+            endTime: "10:45",
+            type: "Cvičenie",
+            roomNumber: "THB01130"
+          },
+          {
+            day: "Ut",
+            startTime: "11:10",
+            endTime: "12:30",
+            type: "Cvičenie",
+            roomNumber: "THB01130"
+          },
+          {
+            day: "St",
+            startTime: "13:00",
+            endTime: "14:30",
+            type: "Prednaška",
+            roomNumber: "THC03050"
+          },
+          {
+            day: "St",
+            startTime: "14:45",
+            endTime: "16:15",
+            type: "Cvičenie",
+            roomNumber: "THB01130"
+          },
+          {
+            day: "St",
+            startTime: "16:30",
+            endTime: "18:00",
+            type: "Cvičenie",
+            roomNumber: "THA02260"
+          },
+        ]
       },
       {
         title: 'Aplikácie počítačových sietí',
@@ -120,6 +282,22 @@ export const useSubjectStore = defineStore('subjectStore', {
         popis: '3K, ZS',
         semester: 'ZS',
         subjectValue: 'pv',
+        times: [
+          {
+            day: "St",
+            startTime: "07:30",
+            endTime: "09:00",
+            type: "Cvičenie",
+            roomNumber: "THB01140"
+          },
+          {
+            day: "St",
+            startTime: "09:15",
+            endTime: "10:45",
+            type: "Cvičenie",
+            roomNumber: "THB01140"
+          },
+        ]
       },
       {
         title: 'Aplikácie priemyselných riadiacich systémov',
@@ -127,6 +305,29 @@ export const useSubjectStore = defineStore('subjectStore', {
         popis: '5K, ZS',
         semester: 'ZS',
         subjectValue: 'pv',
+        times: [
+          {
+            day: "St",
+            startTime: "11:00",
+            endTime: "12:30",
+            type: "Prednaška",
+            roomNumber: "THC03050"
+          },
+          {
+            day: "Št",
+            startTime: "14:45",
+            endTime: "16:15",
+            type: "Cvičenie",
+            roomNumber: "Laboratórium v ŠD Brezový háj"
+          },
+          {
+            day: "Št",
+            startTime: "16:30",
+            endTime: "18:00",
+            type: "Cvičenie",
+            roomNumber: "Laboratórium v ŠD Brezový háj"
+          },
+        ]
       },
       {
         title: 'Backendové technológie',
@@ -134,6 +335,43 @@ export const useSubjectStore = defineStore('subjectStore', {
         popis: '5K, LS',
         semester: 'LS',
         subjectValue: 'pv',
+        times: [
+          {
+            day: "Ut",
+            startTime: "09:15",
+            endTime: "10:45",
+            type: "Cvičenie",
+            roomNumber: "THB01130"
+          },
+          {
+            day: "Ut",
+            startTime: "11:10",
+            endTime: "12:30",
+            type: "Cvičenie",
+            roomNumber: "THB01130"
+          },
+          {
+            day: "St",
+            startTime: "13:00",
+            endTime: "14:30",
+            type: "Prednaška",
+            roomNumber: "THC03050"
+          },
+          {
+            day: "St",
+            startTime: "14:45",
+            endTime: "16:15",
+            type: "Cvičenie",
+            roomNumber: "THB01130"
+          },
+          {
+            day: "St",
+            startTime: "16:30",
+            endTime: "18:00",
+            type: "Cvičenie",
+            roomNumber: "THA02260"
+          },
+        ]
       },
       {
         title: 'Frontendové technológie',
@@ -141,6 +379,57 @@ export const useSubjectStore = defineStore('subjectStore', {
         popis: '5K, ZS',
         semester: 'ZS',
         subjectValue: 'pv',
+        times: [
+          {
+            day: "Po",
+            startTime: "09:15",
+            endTime: "10:45",
+            type: "Prednáška",
+            roomNumber: "THP00060"
+          },
+          {
+            day: "Po",
+            startTime: "11:00",
+            endTime: "12:30",
+            type: "Cvičenie",
+            roomNumber: "THS01100"
+          },
+          {
+            day: "Po",
+            startTime: "13:00",
+            endTime: "14:30",
+            type: "Cvičenie",
+            roomNumber: "THS01100"
+          },
+          {
+            day: "Ut",
+            startTime: "14:45",
+            endTime: "16:15",
+            type: "Cvičenie",
+            roomNumber: "THS01100"
+          },
+          {
+            day: "St",
+            startTime: "13:00",
+            endTime: "14:30",
+            type: "Cvičenie",
+            roomNumber: "THS01100"
+          },
+          {
+            day: "St",
+            startTime: "14:45",
+            endTime: "16:15",
+            type: "Cvičenie",
+            roomNumber: "THS01100"
+          },
+          {
+            day: "Št",
+            startTime: "16:30",
+            endTime: "18:00",
+            type: "Cvičenie",
+            roomNumber: "THS01100"
+          },
+        ]
       },
       {
         title: 'IT projektový manažment',
@@ -148,6 +437,43 @@ export const useSubjectStore = defineStore('subjectStore', {
         popis: '3K, LS',
         semester: 'LS',
         subjectValue: 'pv',
+        times: [
+          {
+            day: "Ut",
+            startTime: "09:15",
+            endTime: "10:45",
+            type: "Cvičenie",
+            roomNumber: "THB01130"
+          },
+          {
+            day: "Ut",
+            startTime: "11:00",
+            endTime: "12:30",
+            type: "Cvičenie",
+            roomNumber: "THB01130"
+          },
+          {
+            day: "St",
+            startTime: "13:00",
+            endTime: "14:30",
+            type: "Prednaška",
+            roomNumber: "THC03050"
+          },
+          {
+            day: "St",
+            startTime: "14:45",
+            endTime: "16:15",
+            type: "Cvičenie",
+            roomNumber: "THB01130"
+          },
+          {
+            day: "St",
+            startTime: "16:30",
+            endTime: "18:00",
+            type: "Cvičenie",
+            roomNumber: "THA02260"
+          },
+        ]
       },
       {
         title: 'Modelovanie a simulácia',
@@ -155,6 +481,50 @@ export const useSubjectStore = defineStore('subjectStore', {
         popis: '6K, ZS',
         semester: 'ZS',
         subjectValue: 'pv',
+        times: [
+          {
+            day: "Po",
+            startTime: "13:00",
+            endTime: "14:30",
+            type: "Cvičenie",
+            roomNumber: "THB01140"
+          },
+          {
+            day: "Po",
+            startTime: "14:45",
+            endTime: "16:15",
+            type: "Prednáška",
+            roomNumber: "THP00060"
+          },
+          {
+            day: "St",
+            startTime: "07:30",
+            endTime: "09:00",
+            type: "Cvičenie",
+            roomNumber: "THB01140"
+          },
+          {
+            day: "St",
+            startTime: "11:00",
+            endTime: "12:30",
+            type: "Cvičenie",
+            roomNumber: "THB01140"
+          },
+          {
+            day: "St",
+            startTime: "13:00",
+            endTime: "14:30",
+            type: "Cvičenie",
+            roomNumber: "THB01140"
+          },
+          {
+            day: "Št",
+            startTime: "09:15",
+            endTime: "10:45",
+            type: "Cvičenie",
+            roomNumber: "THB01140"
+          },
+        ]
       },
       {
         title: 'Programovanie mikroprocesorových systémov',
@@ -162,6 +532,57 @@ export const useSubjectStore = defineStore('subjectStore', {
         popis: '5K, LS',
         semester: 'LS',
         subjectValue: 'pv',
+        times: [
+          {
+            day: "Po",
+            startTime: "09:15",
+            endTime: "10:45",
+            type: "Prednáška",
+            roomNumber: "THP00060"
+          },
+          {
+            day: "Po",
+            startTime: "11:00",
+            endTime: "12:30",
+            type: "Cvičenie",
+            roomNumber: "THS01100"
+          },
+          {
+            day: "Po",
+            startTime: "13:00",
+            endTime: "14:30",
+            type: "Cvičenie",
+            roomNumber: "THS01100"
+          },
+          {
+            day: "Ut",
+            startTime: "14:45",
+            endTime: "16:15",
+            type: "Cvičenie",
+            roomNumber: "THS01100"
+          },
+          {
+            day: "St",
+            startTime: "13:00",
+            endTime: "14:30",
+            type: "Cvičenie",
+            roomNumber: "THS01100"
+          },
+          {
+            day: "St",
+            startTime: "14:45",
+            endTime: "16:15",
+            type: "Cvičenie",
+            roomNumber: "THS01100"
+          },
+          {
+            day: "Št",
+            startTime: "16:30",
+            endTime: "18:00",
+            type: "Cvičenie",
+            roomNumber: "THS01100"
+          },
+        ]
       },
       {
         title: 'Testovanie softvéru',
@@ -169,6 +590,29 @@ export const useSubjectStore = defineStore('subjectStore', {
         popis: '3K, LS',
         semester: 'LS',
         subjectValue: 'pv',
+        times: [
+          {
+            day: "St",
+            startTime: "11:00",
+            endTime: "12:30",
+            type: "Prednaška",
+            roomNumber: "THC03050"
+          },
+          {
+            day: "Št",
+            startTime: "14:45",
+            endTime: "16:15",
+            type: "Cvičenie",
+            roomNumber: "Laboratórium v ŠD Brezový háj"
+          },
+          {
+            day: "Št",
+            startTime: "16:30",
+            endTime: "18:00",
+            type: "Cvičenie",
+            roomNumber: "Laboratórium v ŠD Brezový háj"
+          },
+        ]
       },
       {
         title: 'Vývoj 3D aplikácií',
@@ -176,6 +620,22 @@ export const useSubjectStore = defineStore('subjectStore', {
         popis: '3K, ZS',
         semester: 'ZS',
         subjectValue: 'pv',
+        times: [
+          {
+            day: "Ut",
+            startTime: "11:00",
+            endTime: "12:30",
+            type: "Cvičenie",
+            roomNumber: "THS01090"
+          },
+          {
+            day: "Ut",
+            startTime: "13:00",
+            endTime: "14:30",
+            type: "Cvičenie",
+            roomNumber: "THS01090"
+          },
+        ]
       },
     ],
   }),
