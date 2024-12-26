@@ -13,8 +13,7 @@ export const useSubjectStore = defineStore('subjectStore', {
     filteredSubjects(state) {
       return state.subjects.filter(
         subject =>
-          state.selectedSemester === 'all' ||
-          subject.semester === state.selectedSemester,
+          state.selectedSemester === 'all' || subject.semester === state.selectedSemester
       )
     },
     filteredPP() {

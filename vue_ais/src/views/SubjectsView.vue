@@ -8,8 +8,6 @@
       <label>Letný semester</label>
       <input
         type="radio"
-        id="option3"
-        name="semester"
         value="LS"
         class="checkbox-round"
         v-model="selectedSemester"
@@ -18,8 +16,6 @@
       <label>Zimný semester</label>
       <input
         type="radio"
-        id="option2"
-        name="semester"
         value="ZS"
         class="checkbox-round"
         v-model="selectedSemester"
@@ -28,8 +24,6 @@
       <label>Celý rok</label>
       <input
         type="radio"
-        id="option1"
-        name="semester"
         value="all"
         class="checkbox-round"
         v-model="selectedSemester"
