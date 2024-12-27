@@ -34,18 +34,35 @@
         <div v-if="expandedSubject === subject.title && subject.times">
           <ul class="time-list">
             <li v-for="(time, tIndex) in subject.times" :key="tIndex">
-              {{ time.day }}: {{ time.startTime }} - {{ time.endTime }} {{ time.type}} ({{ time.roomNumber }}) <input type="checkbox" @click.stop>
+              {{ time.day }}: {{ time.startTime }} - {{ time.endTime }} {{ time.type}} ({{ time.roomNumber }})
+              <button @click.stop="addToRozvrh(subject.title, time)">pridat do rozvrhu</button>
+              <button @click.stop="removeFromRozvrh(subject.title, time.day)">odobrat</button>
             </li>
           </ul>
         </div>
       </li>
     </ul>
   </div>
+  <div>
+  <h3>Rozvrh</h3>
+  <div v-for="(subjects, day) in rozvrh" :key="day">
+    <h4>{{ day }}</h4>
+    <ul>
+      <li v-for="(subject, index) in subjects" :key="index">
+        <strong>{{ subject.title }}</strong>
+        <span>{{ subject.startTime }} - {{ subject.endTime }}</span>
+        <span>{{ subject.type }}</span>
+        <span>{{ subject.roomNumber }}</span>
+      </li>
+    </ul>
+  </div>
+</div>
 </template>
 
 <script>
 import TheHeader from '@/components/TheHeader.vue'
 import { useSubjectStore } from '@/stores/SubjectStore'
+
 
 export default {
   components: {
@@ -55,8 +72,16 @@ export default {
     const subjectStore = useSubjectStore()
     return {
       expandedSubject: null,
-      subjectStore
+      subjectStore,
+      rozvrh: {
+      Po: [],
+      Ut: [],
+      St: [],
+      Št: [],
+      Pi: [],
+    },
     };
+    
   },
   computed: {
     selectedSemester: {
@@ -84,12 +109,51 @@ export default {
     
   },
   methods: {
-    toggleSubject(subjectTitle) {
-      this.expandedSubject = this.expandedSubject === subjectTitle ? null : subjectTitle;
-    },
+  toggleSubject(subjectTitle) {
+    this.expandedSubject = this.expandedSubject === subjectTitle ? null : subjectTitle;
   },
-}
+  addToRozvrh(subjectTitle, time) {
 
+  if (time.type !== 'Prednáška') {
+    const alreadyAdded = Object.values(this.rozvrh).some(day =>
+      day.some(entry => entry.title === subjectTitle)
+    );
+
+    if (alreadyAdded) {
+      return;
+    };
+  }
+
+  if (this.rozvrh[time.day]) {
+    // zabezpecenie duplicity 
+    const existsOnDay = this.rozvrh[time.day].some(
+      entry =>
+        entry.title === subjectTitle &&
+        entry.startTime === time.startTime &&
+        entry.endTime === time.endTime &&
+        entry.type === time.type
+    );
+
+    if (!existsOnDay) {
+      this.rozvrh[time.day].push({
+        title: subjectTitle,
+        startTime: time.startTime,
+        endTime: time.endTime,
+        type: time.type,
+        roomNumber: time.roomNumber,
+      });
+    }
+    
+  }
+  
+},
+removeFromRozvrh(subjectTitle, day) {
+    if (this.rozvrh[day]) {
+      this.rozvrh[day] = this.rozvrh[day].filter(entry => entry.title !== subjectTitle)
+    }
+}
+  }
+}
 </script>
 
 <style scoped>
