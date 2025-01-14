@@ -25,80 +25,11 @@
       </p>
     </div>
 
-    <div class="notification-card" @click="toggleAwesome()">
-      <div class="notifications-header">
-        <h2>Notifikácie</h2>
-        <div class="total-badge">{{ totalNotifications }}</div>
-      </div>
-      <button class="arrow-btn">
-        {{ awesome ? '▲' : '▼' }}
-      </button>
-
-      <!-- Notification categories -->
-      <div v-if="awesome" class="toggle-notification-category">
-        <div
-          v-for="(category, index) in categories"
-          :key="index"
-          class="notification-category"
-        >
-          <div class="notification-title">
-            <span>{{ category.title }}</span>
-            <div class="category-controls">
-              <span class="badge">{{ category.count }}</span>
-              <button @click.stop="clearNotifications(index)" class="clear-btn">
-                🗑️
-              </button>
-              <button @click.stop="toggleCategory(index)">
-                {{ category.isOpen ? '▲' : '▼' }}
-              </button>
-            </div>
-          </div>
-
-          <!-- Show/hide details -->
-          <div v-if="category.isOpen" class="notification-details">
-            <p>Details about {{ category.title }} notifications...</p>
-          </div>
-        </div>
-
-        <!-- Maintenance link -->
-        <a href="#" class="maintenance-link">Údržba notifikácií</a>
-      </div>
-    </div>
   </body>
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      awesome: false,
-      categories: [
-        { title: 'O hodnoteniach predmetov', count: 18, isOpen: false },
-        { title: 'O termínoch hodnotenia', count: 107, isOpen: false },
-        { title: 'O dokumentoch', count: 69, isOpen: false },
-      ],
-    }
-  },
-  computed: {
-    totalNotifications() {
-      // Sum of all category counts
-      return this.categories.reduce((sum, category) => sum + category.count, 0)
-    },
-  },
-  methods: {
-    toggleCategory(index) {
-      // Toggle the open state of the category
-      this.categories[index].isOpen = !this.categories[index].isOpen
-    },
-    clearNotifications(index) {
-      // Clear notifications for a specific category
-      this.categories[index].count = 0
-    },
-    toggleAwesome() {
-      this.awesome = !this.awesome
-    },
-  },
-}
+
 </script>
 
 <style scoped>

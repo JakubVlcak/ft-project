@@ -1,6 +1,4 @@
 <template>
-  <!-- Use the imported ais_logo variable for the image source -->
-
   <header>
     <RouterLink to="/"
       ><div class="aisLogo"><img :src="aisLogo" alt="Logo" /></div
@@ -20,14 +18,14 @@
 </template>
 
 <script>
-import aisLogo from '@/assets/ais_logo.png' // Correct path to your image
+import aisLogo from '@/assets/ais_logo.png' 
 import profileIcon from '@/assets/profile_icon.png'
 
 export default {
   name: 'TheHeader',
   data() {
     return {
-      aisLogo, // Make the image available in the template
+      aisLogo, 
       profileIcon,
     }
   },
@@ -35,7 +33,7 @@ export default {
 </script>
 
 <style scoped>
-/* Optional: Add some styling for the image */
+
 
 .Student {
   display: flex;
@@ -44,7 +42,7 @@ export default {
   padding: 10px;
 }
 .Student h2 {
-  margin-right: 50px; /* Adds space between the icon and the text */
+  margin-right: 50px; 
   padding: 10px;
   font-weight: bold;
   font-size: medium;
@@ -56,7 +54,7 @@ header {
   padding-bottom: 0px;
   padding-left: 5px;
   display: flex;
-  align-items: center; /* Align items vertically */
+  align-items: center; 
   justify-content: space-between;
   color: white;
   height: 60px;
@@ -64,11 +62,11 @@ header {
 }
 
 .aisLogo img {
-  width: 90px; /* Set the desired width */
-  height: auto; /* Keep aspect ratio */
+  width: 90px; 
+  height: auto; 
 }
 .profileIcon img {
-  width: 30px; /* Set the desired width */ /* Keep aspect ratio */
+  width: 30px; 
   padding-top: 5px;
 }
 .menu-icon {

@@ -65,7 +65,7 @@
           >
             Odobrať predmet
           </button>
-          <button
+          <button 
             :disabled="addedSubjects.has(subject.title)"
             @click="addCredits(subject.title, subject.credity)"
           >
@@ -78,7 +78,7 @@
 </template>
 
 <script>
-import { useSubjectStore } from '@/stores/SubjectStore' // Import the store
+import { useSubjectStore } from '@/stores/SubjectStore' 
 import TheHeader from '@/components/TheHeader.vue'
 
 export default {
@@ -200,6 +200,6 @@ label {
 }
 .button-group {
   display: flex;
-  gap: 10px; /* Adjust space between buttons */
+  gap: 10px; 
 }
 </style>

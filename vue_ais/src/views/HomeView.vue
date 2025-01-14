@@ -20,7 +20,7 @@ export default {
   <div>
     <TheHeader />
     <div class="main-content">
-      <TheSiderBar class="sidebar" />
+      <TheSiderBar/>
       <div class="content">
         <div class="notification-wrapper">
           <TheNotification />
@@ -35,33 +35,31 @@ export default {
 </template>
 
 <style scoped>
-/* Main layout for content and sidebar */
+
 .main-content {
   display: flex;
   padding: 0 20px;
 }
 
-/* Stack Notification and Schedule vertically in content */
 .content {
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 20px; /* Optional padding for better spacing */
+  padding: 20px; 
 }
 
-/* Specific wrapper styles for spacing */
 .notification-wrapper,
 .schedule-wrapper {
-  margin: 0; /* Remove any default margin */
+  margin: 0; 
   display: flex;
   flex-direction: column;
 }
 .schedule-wrapper > *:not(:last-child) {
-  margin-bottom: 20px; /* Adjust the gap as needed */
+  margin-bottom: 20px; 
 }
 
 .notification-wrapper {
-  margin-bottom: 20px; /* Control spacing between Notification and Schedule */
+  margin-bottom: 20px; 
 }
 
 body {

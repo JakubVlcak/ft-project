@@ -7,10 +7,10 @@
       IDO: 123456<br /><br />
 
       Posledné prihlásenie<br />
-      18.10.2024 19:23<br />
+      {{ currentTime }}<br />
       78.99.34.67<br /><br />
 
-      Dnes je: <strong>18. 10. 2024</strong><br />
+      Dnes je: <strong>{{ currentDate }}</strong><br />
       Meniny má: <strong>Lukáš</strong>
     </p>
 
@@ -83,10 +83,11 @@ import IconUsers from '@/assets/icon-users.png'
 import IconVyhladanie from '@/assets/icon-vyhladanie.png'
 import IconZlozkaBlue from '@/assets/icon-zlozka-blue.png'
 import IconPraca from '@/assets/icon-praca.png'
+import axios from "axios"
 export default {
   data() {
     return {
-      IconCheckRed, // Make the image available in the template
+      IconCheckRed, 
       IconDokumenty,
       IconHodnotenieBlue,
       IconNastenka,
@@ -97,9 +98,23 @@ export default {
       IconVyhladanie,
       IconZlozkaBlue,
       IconPraca,
-    }
+      currentTime: "Načíťavanie...",
+      currentDate: "Načítavanie...",
+      }
   },
-}
+  methods: {
+    async getAnswer() {
+      const { data } = await axios.get("https://timeapi.io/api/time/current/zone?timeZone=Europe%2FAmsterdam");
+      this.currentTime = data.time;
+      this.currentDate = data.date;
+  
+    },
+  },
+  beforeMount() {
+    this.getAnswer();
+  },
+};
+
 </script>
 
 <style scoped>
